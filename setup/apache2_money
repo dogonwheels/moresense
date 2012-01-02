@@ -1,0 +1,11 @@
+<virtualhost *:8083>
+        ServerAdmin webmaster@yourdomain.com
+        DocumentRoot /home/money/
+        ErrorLog /home/money/logs/apache_error.log
+
+	WSGIScriptAlias / /home/money/site/setup/money.wsgi
+
+        LogLevel warn
+        CustomLog /home/money/logs/apache_access.log combined
+        ServerSignature Off
+</virtualhost>

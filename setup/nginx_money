@@ -1,0 +1,23 @@
+server {
+  listen 80;
+  server_name money.chaoticdust.com;
+  access_log  /home/money/logs/nginx.access.log;
+  error_log  /home/money/logs/nginx.error.log;
+
+  location /static {
+    root /home/money/site/;
+  }
+
+  location / {
+    proxy_pass      http://127.0.0.1:8083/;
+    proxy_redirect  off;
+
+    proxy_set_header   Host             $host;
+    proxy_set_header   X-Real-IP        $remote_addr;
+    proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    proxy_set_header        X-Magic-Header "secret";
+
+    client_max_body_size       10m;
+  }
+}
+
