@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Spending(models.Model):
+    amount = models.DecimalField(decimal_places=2, max_digits=8)
+    description = models.TextField()
