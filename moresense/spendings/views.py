@@ -1,21 +1,9 @@
 from django.core.urlresolvers import reverse
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import render_to_response, get_object_or_404
+from django.template.context import RequestContext
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
-from moresense.spendings.models import Spending, SpendingForm, Person
-
-class SpendingCreateView(CreateView):
-    model = Spending
-
-    def get_success_url(self):
-        return reverse("create")
-
-    def get_form_class(self):
-        return SpendingForm
-
-    def get_object(self, queryset=None):
-        return Spending(person=Person.objects.get(identifier=self.kwargs['identifier']))
-
+from moresense.spendings.models import  SpendingForm, Person
 
 class PersonDetailView(DetailView):
     def get_object(self, queryset=None):
@@ -25,3 +13,21 @@ class PersonDetailView(DetailView):
             return person
         except Person.DoesNotExist:
             raise Http404()
+
+
+def add_spending(request, person_identifier):
+    if request.method == 'POST':
+        form = SpendingForm(request.POST)
+        try:
+            person = get_object_or_404(Person, identifier=person_identifier)
+            spending = form.save(commit=False)
+            spending.person = person
+            spending.save()
+            return HttpResponseRedirect(reverse("create", kwargs={"person_identifier": person_identifier}))
+        except ValueError:
+            pass
+    else:
+        form = SpendingForm()
+
+    return render_to_response("spendings/spending_form.html", {'form': form}, context_instance=RequestContext(request))
+
