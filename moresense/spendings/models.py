@@ -31,4 +31,4 @@ class Spending(models.Model):
 class SpendingForm(ModelForm):
     class Meta:
         model = Spending
-        fields = {"amount", "description"}
+        fields = ("amount", "description")
