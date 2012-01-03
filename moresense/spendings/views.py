@@ -10,3 +10,7 @@ class SpendingCreateView(CreateView):
 
     def get_form_class(self):
         return SpendingForm
+
+    def get_initial(self):
+        # FIXME: set the person to be from construction - from the URL
+        return {}
