@@ -16,10 +16,10 @@ class PersonDetailView(DetailView):
 
 
 def add_spending(request, person_identifier):
+    person = get_object_or_404(Person, identifier=person_identifier)
     if request.method == 'POST':
         form = SpendingForm(request.POST)
         try:
-            person = get_object_or_404(Person, identifier=person_identifier)
             spending = form.save(commit=False)
             spending.person = person
             spending.save()
@@ -29,5 +29,8 @@ def add_spending(request, person_identifier):
     else:
         form = SpendingForm()
 
-    return render_to_response("spendings/spending_form.html", {'form': form}, context_instance=RequestContext(request))
+    return render_to_response("spendings/spending_form.html", {
+        'form': form,
+        'person': person
+    }, context_instance=RequestContext(request))
 
