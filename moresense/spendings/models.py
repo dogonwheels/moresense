@@ -24,6 +24,7 @@ class Person(models.Model):
 
 class Spending(models.Model):
     person = models.ForeignKey(Person)
+    when = models.DateTimeField()
     amount = models.DecimalField(decimal_places=2, max_digits=8)
     description = models.TextField()
 

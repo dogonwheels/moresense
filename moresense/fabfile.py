@@ -27,6 +27,6 @@ def deploy():
     local("git push")
     run_fwd("cd ~/site && git pull")
     with cd("~/site/moresense"):
-        virtualenv("python manage.py syncdb")
+        virtualenv("python manage.py migrate spendings")
         virtualenv("python manage.py collectstatic --noinput")
     restart()
