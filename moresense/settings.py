@@ -6,12 +6,13 @@ import os
 
 ADMINS = (
     ('Dom Crayford', 'domcrayford@.gmailcom'),
-)
+    )
 
 MANAGERS = ADMINS
 
 if socket.gethostname() == 'oblivioussponge':
     import production
+
     DEBUG = True
     DATABASES = {
         'default': {
@@ -58,19 +59,19 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH, "../resources/js/"),
     os.path.join(PROJECT_PATH, "../resources/css/"),
     os.path.join(PROJECT_PATH, "../resources/img/"),
-)
+    )
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+    )
 
 SECRET_KEY = 'z@)wq5u*7hk!90z^56owf2yaxl9a)pt3tkb^=zrlwj8wk!t&ee'
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-)
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -78,13 +79,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-)
+    )
 
 ROOT_URLCONF = 'moresense.urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, "../templates"),
-)
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -95,7 +96,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'moresense.spendings',
     'django.contrib.admin',
-)
+    'south',
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -116,6 +118,6 @@ LOGGING = {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
-        },
-    }
+            },
+        }
 }
