@@ -1,4 +1,5 @@
 import datetime
+from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
@@ -25,6 +26,7 @@ def add_spending(request, person_identifier):
             spending.person = person
             spending.when = datetime.datetime.utcnow()
             spending.save()
+            messages.info(request, "%s added." % spending.amount)
             return HttpResponseRedirect(reverse("create", kwargs={"person_identifier": person_identifier}))
         except ValueError:
             pass
