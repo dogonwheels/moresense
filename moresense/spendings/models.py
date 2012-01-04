@@ -15,11 +15,17 @@ def create_person_identifier():
 class Household(models.Model):
     name = models.CharField(max_length=50)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Person(models.Model):
     household = models.ForeignKey(Household)
     name = models.CharField(max_length=50)
     identifier = models.CharField(max_length=50, default=create_person_identifier)
+
+    def __unicode__(self):
+        return "%s %s" % (self.name, self.household.name)
 
 
 class Spending(models.Model):
@@ -27,6 +33,9 @@ class Spending(models.Model):
     when = models.DateTimeField()
     amount = models.DecimalField(decimal_places=2, max_digits=8)
     description = models.TextField()
+
+    def __unicode__(self):
+        return "%s %s" % (self.amount, self.when.isoformat(sep=' '))
 
 
 class SpendingForm(ModelForm):
