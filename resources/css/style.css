@@ -1,63 +1,82 @@
 body, html {
-  font-family: "Lucida Grande", "Tahoma";
-  padding: 0;
-  margin: 0;
-  background: #ddd; }
+    font-family: "Lucida Grande", "Tahoma";
+    padding: 0;
+    margin: 0;
+    background: #ddd;
+}
 
 h1 {
-  color: #fff;
-  padding: 0.2em;
-  margin: 0;
-  text-align: center;
-  background-image: -webkit-linear-gradient(top, #333333, #555555); }
+    color: #fff;
+    padding: 0.2em;
+    margin: 0;
+    text-align: center;
+    background-image: -webkit-linear-gradient(top, #333333, #555555);
+}
 
 .content {
-  padding-bottom: 128px; }
+    padding-bottom: 128px;
+}
 
 form {
-  padding: 2em; }
-  form p {
+    padding: 2em;
+}
+
+form p {
     position: relative;
     height: 1.5em;
     padding: 0.5em;
-    margin: 0; }
-  form label {
+    margin: 0;
+}
+
+form label {
     position: absolute;
-    right: 69%; }
-  form input, form textarea {
+    left: 5%;
+}
+
+form input, form textarea {
     position: absolute;
-    left: 33%;
-    width: 33%;
-    height: 1.5em; }
-  form input[type="submit"] {
+    left: 35%;
+    width: 60%;
+    height: 1.5em;
+}
+
+form input[type="submit"] {
     width: 20%;
     left: 40%;
-    font-size: 30px; }
+    font-size: 30px;
+}
 
 ul.toolbar {
-  padding: 0;
-  margin: 0;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  background-image: -webkit-linear-gradient(top, transparent 0%, transparent 10%, #333333 10%, #555555 90%, transparent 90%, transparent 100%);
-  list-style: none; }
-  ul.toolbar li {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-image: -webkit-linear-gradient(top, transparent 0%, transparent 10%, #333333 10%, #555555 90%, transparent 90%, transparent 100%);
+    list-style: none;
+}
+
+ul.toolbar li {
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 32%;
+    width: 60%;
     display: inline-block;
-    text-align: center; }
-    ul.toolbar li.current {
-      background-image: -webkit-linear-gradient(top, #cc0000, #990000); }
+    text-align: center;
+}
+
+ul.toolbar li.current {
+    background-image: -webkit-linear-gradient(top, #cc0000, #990000);
+}
 
 ul.messages {
-  list-style: none; }
+    list-style: none;
+}
 
 li.info {
-  position: absolute;
-  background: #ffff66;
-  box-shadow: #cccc00 0px 0px 2px 2px;
-  padding: 2%;
-  width: 29%;
-  left: 33%; }
+    position: absolute;
+    background: #ffff66;
+    box-shadow: #cccc00 0px 0px 2px 2px;
+    padding: 2%;
+    width: 29%;
+    left: 33%;
+}
