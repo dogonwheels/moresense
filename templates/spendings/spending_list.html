@@ -4,15 +4,16 @@
     <title></title>
 </head>
 <body>
-    {{ person.name }}
+{{ person.name }}
 
-    <ol>
+<table>
     {% for spending in spendings %}
-
-    <li>{{ spending.amount }}</li>
-
+    <tr>
+        <td>{{ spending.when }}</td>
+        <td>{{ spending.description }}</td>
+        <td>{{ spending.amount }}</td>
+    </tr>
     {% endfor %}
-    </ol>
-
+</table>
 </body>
 </html>
