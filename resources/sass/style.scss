@@ -53,7 +53,7 @@ ul.toolbar {
     li {
         padding-top: 20px;
         padding-bottom: 20px;
-        width: 60%;
+        width: 32%;
         display: inline-block;
         text-align: center;
         &.current {
@@ -66,11 +66,10 @@ ul.messages {
     list-style: none;
 }
 li.info {
-    position: absolute;
     background: lighten(yellow, 20%);
     box-shadow: darken(yellow, 10%) 0px 0px 2px 2px;
     padding: 2%;
-    width: 29%;
-    left: 33%;
+    width: 300px;
+    margin: auto;
 }
 
