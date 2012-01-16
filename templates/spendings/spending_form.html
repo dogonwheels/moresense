@@ -33,8 +33,10 @@
 <div data-role="footer">
     <ul class="toolbar">
         <li><img src="{{ STATIC_URL }}add.png"/></li>
-        <li><a href="{% url moresense.spendings.views.spendings_list person.identifier %}"><img src="{{ STATIC_URL }}all.png"/></a></li>
-        <li><img src="{{ STATIC_URL }}graph.png"/></li>
+        <li><a href="{% url moresense.spendings.views.spendings_list person.identifier %}"><img
+                src="{{ STATIC_URL }}all.png"/></a></li>
+        <li><a href="{% url moresense.spendings.views.spendings_summary person.identifier %}"><img
+                src="{{ STATIC_URL }}graph.png"/></a></li>
     </ul>
 </div>
 </body>
