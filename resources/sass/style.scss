@@ -2,7 +2,7 @@ body, html {
     font-family: "Lucida Grande", "Tahoma";
     padding: 0;
     margin: 0;
-    background: #eee;
+    background: #ddd;
 }
 
 h1 {
@@ -14,7 +14,32 @@ h1 {
 }
 
 .content {
-    background: #ddd;
+    padding-bottom: 128px;
+}
+
+form {
+    padding: 2em;
+    p {
+        position: relative;
+        height: 1.5em;
+        padding: 0.5em;
+        margin: 0;
+    }
+    label {
+        position: absolute;
+        right: 69%;
+    }
+    input, textarea {
+        position: absolute;
+        left: 33%;
+        width: 33%;
+        height: 1.5em;
+    }
+    input[type="submit"] {
+        width: 20%;
+        left: 40%;
+        font-size: 30px;
+    }
 }
 
 ul.toolbar {
@@ -32,7 +57,20 @@ ul.toolbar {
         display: inline-block;
         text-align: center;
         &.current {
-            background: red;
+            background-image: -webkit-linear-gradient(top, darken(red, 10%), darken(red, 20%));
         }
     }
 }
+
+ul.messages {
+    list-style: none;
+}
+li.info {
+    position: absolute;
+    background: lighten(yellow, 20%);
+    box-shadow: darken(yellow, 10%) 0px 0px 2px 2px;
+    padding: 2%;
+    width: 29%;
+    left: 33%;
+}
+
