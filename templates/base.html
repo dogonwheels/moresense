@@ -14,7 +14,17 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            myScroll = new iScroll('wrapper');
+            myScroll = new iScroll('wrapper', {
+                fixedScrollbar:true,
+                onBeforeScrollStart: function (e) {
+                    var target = e.target;
+                    while (target.nodeType != 1) target = target.parentNode;
+                    if (target.tagName != 'SELECT' && target.tagName != 'INPUT' &&
+                        target.tagName != 'TEXTAREA') {
+                        e.preventDefault();
+                    }
+                }
+            });
             {% block onready %}
             $(".messages").delay(5000).fadeOut();
             {% endblock %}
