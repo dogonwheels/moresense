@@ -10,7 +10,9 @@ h1 {
     padding: 0.2em;
     margin: 0;
     text-align: center;
-    background-image: -webkit-linear-gradient(top, #333, #555);
+    background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#555));
+    background: -webkit-linear-gradient(#333, #555);
+    font-size: 18px;
 }
 
 .content {
@@ -18,7 +20,7 @@ h1 {
 }
 
 form {
-    padding: 2em;
+    padding: 1em;
     p {
         position: relative;
         height: 1.5em;
@@ -26,19 +28,20 @@ form {
         margin: 0;
     }
     label {
+        font-size: 12px;
         position: absolute;
-        left: 5%;
+        bottom: 12px;
+        left: 10px;
     }
     input, textarea {
         position: absolute;
-        left: 35%;
-        width: 60%;
+        right: 10px;
+        left: 90px;
         height: 1.5em;
     }
     input[type="submit"] {
-        width: 20%;
-        left: 40%;
-        font-size: 30px;
+        width: 110px;
+        font-size: 18px;
     }
 }
 
@@ -49,6 +52,7 @@ ul.toolbar {
     bottom: 0px;
     width: 100%;
     background-image: -webkit-linear-gradient(top, transparent 0%, transparent 10%, #333 10%, #555 90%, transparent 90%, transparent 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(10%, transparent), color-stop(10%, #333), color-stop(90%, #555), color-stop(90%, transparent), color-stop(100%, transparent));
     list-style: none;
     li {
         padding-top: 20px;
@@ -57,7 +61,8 @@ ul.toolbar {
         display: inline-block;
         text-align: center;
         &.current {
-            background-image: -webkit-linear-gradient(top, darken(red, 10%), darken(red, 20%));
+            background-image: -webkit-linear-gradient(darken(red, 10%), darken(red, 20%));
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, darken(red, 10%)), color-stop(100%, darken(red, 20%)));
         }
     }
 }
