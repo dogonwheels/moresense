@@ -6,12 +6,12 @@ body, html {
 
 h1 {
   color: #fff;
-  padding: 0.2em;
   margin: 0;
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#555555));
   background: -webkit-linear-gradient(#333333, #555555);
-  font-size: 20px; }
+  font-size: 20px;
+  height: 34px; }
 
 .content {
   padding-bottom: 128px; }
@@ -39,6 +39,7 @@ form {
     font-size: 18px; }
 
 ul.toolbar {
+  z-index: 2;
   padding: 0;
   margin: 0;
   position: fixed;
@@ -48,8 +49,8 @@ ul.toolbar {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(10%, transparent), color-stop(10%, #333333), color-stop(90%, #555555), color-stop(90%, transparent), color-stop(100%, transparent));
   list-style: none; }
   ul.toolbar li {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 32%;
     display: inline-block;
     text-align: center; }
@@ -95,8 +96,8 @@ body {
 #wrapper {
   position: absolute;
   z-index: 1;
-  top: 45px;
-  bottom: 48px;
+  top: 34px;
+  bottom: 76px;
   left: 0;
   width: 100%;
   overflow: auto; }
