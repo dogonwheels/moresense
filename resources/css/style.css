@@ -85,11 +85,14 @@ ul.errorlist {
     font-size: 12px; }
 
 table {
+  font-size: 12px;
   margin: 10px;
   background: #eee;
   padding: 2px; }
   table tr {
     padding: 2px; }
+    table tr.theirs td.description, table tr.theirs td:last-of-type {
+      color: #888; }
   table td {
     white-space: nowrap;
     border-bottom: 1px #e0e0e0 solid;
@@ -105,6 +108,10 @@ div.summary {
   margin: 10px;
   background: #eee;
   padding: 2px 20px 10px 20px; }
+  div.summary p {
+    font-size: 12px; }
+  div.summary h2 {
+    font-size: 18px; }
 
 body, ul, li {
   padding: 0;

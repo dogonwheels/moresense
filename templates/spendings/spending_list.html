@@ -3,7 +3,7 @@
 {% block content %}
 <table>
     {% for spending in spendings %}
-    <tr>
+    <tr class="{% ifequal person.id spending.person.id %}mine{% else %}theirs{% endifequal %}">
         <td>{% ifchanged %}{{ spending.when|date:"D jS"}}{% endifchanged %}</td>
         <td class="description">{{ spending.description }}</td>
         <td>£{{ spending.amount|floatformat:2 }}</td>

@@ -100,11 +100,17 @@ ul.errorlist {
 }
 
 table {
+    font-size: 12px;
     margin: 10px;
     background: #eee;
     padding: 2px;
     tr {
         padding: 2px;
+        &.theirs {
+            td.description, td:last-of-type {
+                color: #888;
+            }
+        }
     }
     td {
         white-space: nowrap;
@@ -126,6 +132,12 @@ div.summary {
     margin: 10px;
     background: #eee;
     padding: 2px 20px 10px 20px;
+    p {
+        font-size: 12px;
+    }
+    h2 {
+        font-size: 18px;
+    }
 }
 
 body,ul,li {
