@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}touch-icon-ipad.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL}}touch-icon-iphone4.png"/>
 
-    <link rel="stylesheet" href="{{ STATIC_URL }}style.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}style.css" media="all"/>
     <script type="application/javascript" src="{{ STATIC_URL }}iscroll.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script type="text/javascript">
@@ -30,57 +30,6 @@
             {% endblock %}
         });
     </script>
-
-    <style type="text/css" media="all">
-        body,ul,li {
-            padding:0;
-            margin:0;
-            border:0;
-        }
-
-        body {
-            -webkit-user-select:none;
-            -webkit-text-size-adjust:none;
-        }
-
-        #wrapper {
-            position:absolute; z-index:1;
-            top:45px; bottom:48px; left:0;
-            width:100%;
-            overflow:auto;
-        }
-
-        #scroller {
-            position:absolute; z-index:1;
-            -webkit-tap-highlight-color:rgba(0,0,0,0);
-            width:100%;
-            padding:0;
-        }
-
-        #scroller ul {
-            list-style:none;
-            padding:0;
-            margin:0;
-            width:100%;
-            text-align:left;
-        }
-
-        #scroller li {
-            padding:0 10px;
-            height:40px;
-            line-height:40px;
-            border-bottom:1px solid #ccc;
-            border-top:1px solid #fff;
-            background-color:#fafafa;
-            font-size:14px;
-        }
-
-        #myFrame {
-            position:absolute;
-            top:0; left:0;
-        }
-
-    </style>
 
 </head>
 <body>
