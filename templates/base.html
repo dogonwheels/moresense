@@ -14,6 +14,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            // Initialise iScroll, but make sure our form elements still work.
             myScroll = new iScroll('wrapper', {
                 fixedScrollbar:true,
                 onBeforeScrollStart: function (e) {
@@ -24,6 +25,11 @@
                         e.preventDefault();
                     }
                 }
+            });
+            // Set location in JS for links within the app - this keeps the iPhone 'app' from
+            // launching Safari.
+            $("a.inner").live("click", function(e) {
+                window.location = this.href;
             });
             {% block onready %}
             $(".messages").delay(5000).fadeOut();
@@ -43,17 +49,17 @@
 <div id="footer">
     <ul class="toolbar">
         <li class="{% block add_tab %}{% endblock %}">
-            <a href="{% url moresense.spendings.views.add_spending person.identifier %}">
+            <a class="inner" href="{% url moresense.spendings.views.add_spending person.identifier %}">
                 <img src="{{ STATIC_URL }}add.png"/>
             </a>
         </li>
         <li class="{% block list_tab %}{% endblock %}">
-            <a href="{% url moresense.spendings.views.spendings_list person.identifier %}">
+            <a class="inner" href="{% url moresense.spendings.views.spendings_list person.identifier %}">
                 <img src="{{ STATIC_URL }}all.png"/>
             </a>
         </li>
         <li class="{% block graph_tab %}{% endblock %}">
-            <a href="{% url moresense.spendings.views.spendings_summary person.identifier %}">
+            <a class="inner" href="{% url moresense.spendings.views.spendings_summary person.identifier %}">
                 <img src="{{ STATIC_URL }}graph.png"/>
             </a>
         </li>
