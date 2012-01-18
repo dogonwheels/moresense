@@ -11,7 +11,7 @@ h1 {
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#555555));
   background: -webkit-linear-gradient(#333333, #555555);
-  font-size: 18px; }
+  font-size: 20px; }
 
 .content {
   padding-bottom: 128px; }
@@ -55,6 +55,9 @@ ul.toolbar {
     ul.toolbar li.current {
       background-image: -webkit-linear-gradient(#cc0000, #990000);
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cc0000), color-stop(100%, #990000)); }
+  ul.toolbar img {
+    width: 64px;
+    height: 64px; }
 
 ul.messages {
   list-style: none; }
