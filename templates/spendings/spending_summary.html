@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<h1>Week</h1>
+{% extends "base.html" %}
 
+{% block content %}
+<h2>Week</h2>
 <p>{{ this_week }} ({{ last_week }})</p>
 
-<h1>Month</h1>
-
+<h2>Month</h2>
 <p>{{ this_month }} ({{ last_month }})</p>
-</body>
-</html>
+{% endblock %}
+
+{% block graph_tab %}current{% endblock %}

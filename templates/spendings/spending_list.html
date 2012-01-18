@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-{{ person.name }}
+{% extends "base.html" %}
+
+{% block content %}
 
 <table>
     {% for spending in spendings %}
@@ -15,5 +11,6 @@
     </tr>
     {% endfor %}
 </table>
-</body>
-</html>
+{% endblock %}
+
+{% block list_tab %}current{% endblock %}

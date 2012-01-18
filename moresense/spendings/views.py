@@ -68,6 +68,7 @@ def spendings_summary(request, person_identifier):
 
     # Pull out the total spent in some useful time periods
     totals = {
+        'person': person,
         'this_week': spendings.filter(when__gt=start_of_week).aggregate(Sum('amount'))['amount__sum'],
         'this_month': spendings.filter(when__gt=start_of_month).aggregate(Sum('amount'))['amount__sum'],
         'last_week': spendings.filter(when__lt=start_of_week, when__gt=start_of_last_week).aggregate(Sum('amount'))[

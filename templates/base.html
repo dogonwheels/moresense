@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Spendings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}touch-icon-iphone.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}touch-icon-ipad.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL}}touch-icon-iphone4.png"/>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}style.css"/>
+    <script type="application/javascript" src="{{ STATIC_URL }}iscroll.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            myScroll = new iScroll('wrapper');
+            {% block onready %}
+            $(".messages").delay(5000).fadeOut();
+            {% endblock %}
+        });
+    </script>
+
+    <style type="text/css" media="all">
+        body,ul,li {
+            padding:0;
+            margin:0;
+            border:0;
+        }
+
+        body {
+            -webkit-user-select:none;
+            -webkit-text-size-adjust:none;
+        }
+
+        #wrapper {
+            position:absolute; z-index:1;
+            top:45px; bottom:48px; left:0;
+            width:100%;
+            overflow:auto;
+        }
+
+        #scroller {
+            position:absolute; z-index:1;
+            -webkit-tap-highlight-color:rgba(0,0,0,0);
+            width:100%;
+            padding:0;
+        }
+
+        #scroller ul {
+            list-style:none;
+            padding:0;
+            margin:0;
+            width:100%;
+            text-align:left;
+        }
+
+        #scroller li {
+            padding:0 10px;
+            height:40px;
+            line-height:40px;
+            border-bottom:1px solid #ccc;
+            border-top:1px solid #fff;
+            background-color:#fafafa;
+            font-size:14px;
+        }
+
+        #myFrame {
+            position:absolute;
+            top:0; left:0;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="header">
+    <h1>{{ person.name }}</h1>
+</div>
+<div id="wrapper">
+    {% block content %}
+    {% endblock %}
+</div>
+<div id="footer">
+    <ul class="toolbar">
+        <li class="{% block add_tab %}{% endblock %}">
+            <a href="{% url moresense.spendings.views.add_spending person.identifier %}">
+                <img src="{{ STATIC_URL }}add.png"/>
+            </a>
+        </li>
+        <li class="{% block list_tab %}{% endblock %}">
+            <a href="{% url moresense.spendings.views.spendings_list person.identifier %}">
+                <img src="{{ STATIC_URL }}all.png"/>
+            </a>
+        </li>
+        <li class="{% block graph_tab %}{% endblock %}">
+            <a href="{% url moresense.spendings.views.spendings_summary person.identifier %}">
+                <img src="{{ STATIC_URL }}graph.png"/>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
