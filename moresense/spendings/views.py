@@ -42,7 +42,7 @@ def add_spending(request, person_identifier):
 
 def spendings_list(request, person_identifier):
     person = get_object_or_404(Person, identifier=person_identifier)
-    spendings = Spending.objects.filter(person__household=person.household).order_by("-when")[:10]
+    spendings = Spending.objects.filter(person__household=person.household).order_by("-when")[:25]
     return render_to_response("spendings/spending_list.html", {
         'person': person,
         'spendings': spendings

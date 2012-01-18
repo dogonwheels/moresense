@@ -99,6 +99,29 @@ ul.errorlist {
     }
 }
 
+table {
+    margin: 10px;
+    background: #eee;
+    padding: 2px;
+    tr {
+        padding: 2px;
+    }
+    td {
+        white-space: nowrap;
+        border-bottom: 1px #e0e0e0 solid;
+        margin: 0;
+        &:last-of-type {
+            text-align: right;
+        }
+    }
+    tr:last-of-type td {
+        border-bottom: 0;
+    }
+    td.description {
+        width: 100%;
+    }
+}
+
 body,ul,li {
     padding:0;
     margin:0;

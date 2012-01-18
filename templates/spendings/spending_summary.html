@@ -2,10 +2,10 @@
 
 {% block content %}
 <h2>Week</h2>
-<p>{{ this_week }} ({{ last_week }})</p>
+<p>{{ this_week|default:"0.00" }} ({{ last_week|default:"0.00" }})</p>
 
 <h2>Month</h2>
-<p>{{ this_month }} ({{ last_month }})</p>
+<p>{{ this_month|default:"0.00" }} ({{ last_month|default:"0.00" }})</p>
 {% endblock %}
 
 {% block graph_tab %}current{% endblock %}
