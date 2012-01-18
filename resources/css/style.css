@@ -21,12 +21,13 @@ form {
   form p {
     position: relative;
     height: 1.5em;
-    padding: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
     margin: 0; }
   form label {
     font-size: 12px;
     position: absolute;
-    bottom: 12px;
+    bottom: 14px;
     left: 10px; }
   form input, form textarea {
     position: absolute;
@@ -65,6 +66,19 @@ ul.messages {
 li.info {
   background: #ffff66;
   box-shadow: #cccc00 0px 0px 2px 2px;
-  padding: 2%;
-  width: 300px;
-  margin: auto; }
+  position: absolute;
+  text-align: center;
+  padding: 5px;
+  left: 10px;
+  right: 10px;
+  font-size: 12px; }
+
+ul.errorlist {
+  list-style: none;
+  margin: 10px; }
+  ul.errorlist li {
+    background: #ff6666;
+    text-align: center;
+    padding: 5px;
+    width: 200px;
+    font-size: 12px; }
