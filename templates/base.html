@@ -30,6 +30,7 @@
             // launching Safari.
             $("a.inner").live("click", function(e) {
                 window.location = this.href;
+                e.preventDefault();
             });
             {% block onready %}
             $(".messages").delay(5000).fadeOut();
