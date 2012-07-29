@@ -48,6 +48,12 @@ def spendings_list(request, person_identifier):
         'spendings': spendings
     }, context_instance=RequestContext(request))
 
+def spendings_export(request, person_identifier):
+    person = get_object_or_404(Person, identifier=person_identifier)
+    spendings = Spending.objects.filter(person__household=person.household).order_by("when")
+    return render_to_response("spendings/spending_all.html", {
+        'spendings': spendings
+    }, context_instance=RequestContext(request))
 
 def spendings_summary(request, person_identifier):
     person = get_object_or_404(Person, identifier=person_identifier)

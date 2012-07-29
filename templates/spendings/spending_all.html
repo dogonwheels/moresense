@@ -1,0 +1,3 @@
+{% for spending in spendings %}
+{{ spending.when|date:"d/m/y"}}, {{ spending.person.name }}, {{ spending.description }}, {{ spending.amount|floatformat:2 }}<br>
+{% endfor %}
